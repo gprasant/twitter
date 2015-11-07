@@ -1,29 +1,20 @@
 //
-//  LoginViewController.m
+//  TweetsViewController.m
 //  twitter
 //
-//  Created by Prasanth Guruprasad on 11/4/15.
+//  Created by Prasanth Guruprasad on 11/7/15.
 //  Copyright © 2015 codepath. All rights reserved.
 //
 
-#import "LoginViewController.h"
-#import "TwitterClient.h"
-@interface LoginViewController ()
-- (IBAction)onLogin:(id)sender;
+#import "TweetsViewController.h"
+#import "User.h"
+
+@interface TweetsViewController ()
+- (IBAction)onLogout:(id)sender;
 
 @end
 
-@implementation LoginViewController
-- (IBAction)onLogin:(id)sender {
-    [[TwitterClient sharedInstance] loginWithCompletion: ^(User *user, NSError *error) {
-        if (user) {
-            // present Tweets View Modally
-            NSLog(@"Welcome to : %@", user.name);
-        } else {
-            // present Error View
-        }
-    }];
-}
+@implementation TweetsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,4 +35,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)onLogout:(id)sender {
+    [User logout];
+}
 @end

@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "TwitterClient.h"
+#import "User.h"
+#import "Tweet.h"
+#import "TweetsViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,7 +23,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[LoginViewController alloc] init];
+
+
+    
+    User *currentUser = [User currentUser];
+    if (currentUser != nil) {
+        NSLog(@"Welcome to %@", currentUser.name);
+        self.window.rootViewController = [[TweetsViewController alloc] init];
+    } else {
+        NSLog(@"User not logged in");
+        self.window.rootViewController = [[LoginViewController alloc] init];
+    }
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -47,14 +61,7 @@
 }
 
 -(BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    [[TwitterClient sharedInstance] fetchAccessTokenWithPath:@"oauth/access_token"
-                                                      method:@"GET"
-                                                requestToken:[BDBOAuth1Credential credentialWithQueryString:url.query]
-                                                     success: ^(BDBOAuth1Credential *credential) {
-                                                         NSLog(@"Successfully got auth token");
-                                                     } failure: ^(NSError *error) {
-                                                         NSLog(@"Failed to get the auth token");
-                                                     }];
+    [[TwitterClient sharedInstance] openURL:url];    
     return YES;
 }
 
