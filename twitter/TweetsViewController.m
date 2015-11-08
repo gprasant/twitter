@@ -21,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out"
+                                                                            style:UIBarButtonItemStylePlain
+                                                                           target:self
+                                                                           action:@selector(onSignoutTap)];
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil
                                                 completion:^(NSArray *tweets, NSError *error) {
                                                     for (Tweet *t in tweets) {
@@ -47,4 +51,10 @@
 - (IBAction)onLogout:(id)sender {
     [User logout];
 }
+
+#pragma mark - Private methods
+- (void) onSignoutTap {
+    [self onLogout: self.navigationItem.leftBarButtonItem];
+}
+
 @end
