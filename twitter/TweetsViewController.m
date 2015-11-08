@@ -10,9 +10,10 @@
 #import "User.h"
 #import "TwitterClient.h"
 #import "Tweet.h"
+#import "TweetCell.h"
 
-@interface TweetsViewController ()
-- (IBAction)onLogout:(id)sender;
+@interface TweetsViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tweetsTableView;
 
 @end
 
@@ -25,12 +26,28 @@
                                                                             style:UIBarButtonItemStylePlain
                                                                            target:self
                                                                            action:@selector(onSignoutTap)];
+    self.navigationItem.title = @"Home";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onComposeTap)];
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil
                                                 completion:^(NSArray *tweets, NSError *error) {
                                                     for (Tweet *t in tweets) {
                                                         NSLog(@"Text : %@", t.text);
                                                     }
                                                 }];
+    self.tweetsTableView.dataSource = self;
+    self.tweetsTableView.delegate = self;
+    UINib *tweetCellNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
+    [self.tweetsTableView registerNib:tweetCellNib forCellReuseIdentifier:@"TweetCell"];
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.tweetsTableView dequeueReusableCellWithIdentifier:@"TweetCell"];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +72,10 @@
 #pragma mark - Private methods
 - (void) onSignoutTap {
     [self onLogout: self.navigationItem.leftBarButtonItem];
+}
+
+- (void) onComposeTap {
+    //Launch Compose view here;
 }
 
 @end
