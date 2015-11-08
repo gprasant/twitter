@@ -11,6 +11,8 @@
 @interface TwitterClient : BDBOAuth1RequestOperationManager
 
 + (TwitterClient *) sharedInstance;
+
+- (void) homeTimelineWithParams: (NSDictionary *)params completion: (void (^)(NSArray *tweets, NSError *error)) completion;
 - (void) loginWithCompletion: (void (^)(User *user, NSError *error)) completion;
 - (void) openURL: (NSURL *)url;
 

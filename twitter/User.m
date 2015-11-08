@@ -69,6 +69,7 @@ NSString * const kCurrentUserKey = @"currentUserKey";
 + (void) logout {
     [self setCurrentUser:nil];
     [[TwitterClient sharedInstance].requestSerializer removeAccessToken];
+    [[NSNotificationCenter defaultCenter] postNotificationName: UserDidLogoutNotification object:nil];
 }
 
 @end

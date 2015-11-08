@@ -24,7 +24,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
 
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogOut) name:UserDidLogoutNotification object:nil];
     
     User *currentUser = [User currentUser];
     if (currentUser != nil) {
@@ -63,6 +63,11 @@
 -(BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     [[TwitterClient sharedInstance] openURL:url];    
     return YES;
+}
+
+- (void) userDidLogOut {
+     self.window.rootViewController = [[LoginViewController alloc] init];
+    [self.window makeKeyAndVisible];
 }
 
 @end

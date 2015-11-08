@@ -12,11 +12,11 @@
 
 @interface Tweet : NSObject
 
++ (NSArray *) tweetsWithArray:(NSArray *)dictionaries;
+
+- (id) initWithDictionary: ( NSDictionary *)dictionary;
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) User *user;
 
-- (id) initWithDictionary: ( NSDictionary *)dictionary;
-
-+ (NSArray *) tweetsWithArray:(NSArray *)dictionaries;
 @end

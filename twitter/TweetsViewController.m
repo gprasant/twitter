@@ -8,6 +8,8 @@
 
 #import "TweetsViewController.h"
 #import "User.h"
+#import "TwitterClient.h"
+#import "Tweet.h"
 
 @interface TweetsViewController ()
 - (IBAction)onLogout:(id)sender;
@@ -19,6 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [[TwitterClient sharedInstance] homeTimelineWithParams:nil
+                                                completion:^(NSArray *tweets, NSError *error) {
+                                                    for (Tweet *t in tweets) {
+                                                        NSLog(@"Text : %@", t.text);
+                                                    }
+                                                }];
 }
 
 - (void)didReceiveMemoryWarning {

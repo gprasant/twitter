@@ -10,6 +10,9 @@
 
 @interface User : NSObject
 
+extern NSString * const UserDidLoginNotification;
+extern NSString * const UserDidLogoutNotification;
+
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *screenName;
 @property (strong, nonatomic) NSString *profileImageURL;
