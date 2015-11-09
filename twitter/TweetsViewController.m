@@ -30,7 +30,9 @@
                                                                            action:@selector(onSignoutTap)];
     self.navigationItem.title = @"Home";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onComposeTap)];
-    [[TwitterClient sharedInstance] homeTimelineWithParams:nil
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   [NSNumber numberWithInt:50], @"count", nil];
+    [[TwitterClient sharedInstance] homeTimelineWithParams:params
                                                 completion:^(NSArray *tweets, NSError *error) {
                                                     self.tweets = tweets;
                                                     for (Tweet *t in tweets) {
