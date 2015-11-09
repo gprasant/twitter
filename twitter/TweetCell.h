@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tweet.h"
 
 @interface TweetCell : UITableViewCell
 //    start adding members
+@property (strong, nonatomic) Tweet *tweet;
+
 @end

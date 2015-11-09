@@ -50,45 +50,64 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reply" highlightedImage="Reply" translatesAutoresizingMaskIntoConstraints="NO" id="g5R-Ey-DhE">
-                        <rect key="frame" x="86" y="86" width="20" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfB-jh-EuM">
+                        <rect key="frame" x="89" y="89" width="20" height="22"/>
                         <animations/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="oCi-E4-kZO">
-                        <rect key="frame" x="157" y="86" width="20" height="20"/>
+                        <state key="normal" image="Reply"/>
+                        <connections>
+                            <action selector="onReplyButtonTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gEH-Qu-Qx1"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytS-fA-bKA">
+                        <rect key="frame" x="289" y="89" width="20" height="22"/>
                         <animations/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="gT5-QR-4om">
-                        <rect key="frame" x="227" y="86" width="20" height="20"/>
+                        <state key="normal" image="like"/>
+                        <connections>
+                            <action selector="onHeartButtonTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="leS-Om-CvP"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3B-hB-Yx8">
+                        <rect key="frame" x="189" y="89" width="20" height="22"/>
                         <animations/>
-                    </imageView>
+                        <state key="normal" image="Retweet"/>
+                        <connections>
+                            <action selector="onRetweetButtonTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Goh-7o-lJd"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="oCi-E4-kZO" firstAttribute="leading" secondItem="g5R-Ey-DhE" secondAttribute="trailing" constant="51" id="1eh-6s-du8"/>
+                    <constraint firstItem="QfB-jh-EuM" firstAttribute="top" secondItem="HYs-dz-UMe" secondAttribute="bottom" constant="11" id="53B-Nb-cv3"/>
                     <constraint firstItem="63I-8B-JzQ" firstAttribute="leading" secondItem="TgX-dy-fok" secondAttribute="trailing" constant="8" id="57h-fe-hbZ"/>
                     <constraint firstAttribute="trailing" secondItem="l69-e0-F06" secondAttribute="trailing" constant="8" id="5Bx-aD-NbU"/>
                     <constraint firstItem="LnK-sK-5Gw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="7BR-HN-9ad"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oCi-E4-kZO" secondAttribute="bottom" constant="8" id="AIP-sn-Z3v"/>
-                    <constraint firstItem="gT5-QR-4om" firstAttribute="centerY" secondItem="g5R-Ey-DhE" secondAttribute="centerY" id="CTu-np-or5"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="c3B-hB-Yx8" secondAttribute="bottom" constant="8" id="7LQ-Ck-tVe"/>
                     <constraint firstItem="63I-8B-JzQ" firstAttribute="centerY" secondItem="TgX-dy-fok" secondAttribute="centerY" id="Cxo-Q7-O0A"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LnK-sK-5Gw" secondAttribute="bottom" constant="8" id="DI9-79-6Vh"/>
                     <constraint firstItem="HYs-dz-UMe" firstAttribute="top" secondItem="63I-8B-JzQ" secondAttribute="bottom" constant="8" id="Ljb-hT-3Su"/>
                     <constraint firstItem="l69-e0-F06" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="63I-8B-JzQ" secondAttribute="trailing" constant="8" id="SSe-h0-ilT"/>
+                    <constraint firstItem="ytS-fA-bKA" firstAttribute="leading" secondItem="c3B-hB-Yx8" secondAttribute="trailing" constant="80" id="TQx-mU-6Pu"/>
                     <constraint firstItem="LnK-sK-5Gw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="TsT-6K-uqd"/>
-                    <constraint firstItem="g5R-Ey-DhE" firstAttribute="top" secondItem="HYs-dz-UMe" secondAttribute="bottom" constant="8" id="Ugo-2h-i7g"/>
                     <constraint firstItem="63I-8B-JzQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="Yzg-hg-ROM"/>
-                    <constraint firstItem="oCi-E4-kZO" firstAttribute="centerY" secondItem="g5R-Ey-DhE" secondAttribute="centerY" id="Z0W-Cr-vnh"/>
                     <constraint firstItem="HYs-dz-UMe" firstAttribute="leading" secondItem="LnK-sK-5Gw" secondAttribute="trailing" constant="8" id="aJN-1i-CtN"/>
+                    <constraint firstItem="c3B-hB-Yx8" firstAttribute="leading" secondItem="QfB-jh-EuM" secondAttribute="trailing" constant="80" id="asF-nw-XJv"/>
+                    <constraint firstItem="c3B-hB-Yx8" firstAttribute="centerY" secondItem="QfB-jh-EuM" secondAttribute="centerY" id="e6F-ae-gkc"/>
                     <constraint firstItem="l69-e0-F06" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="fJx-Gc-dQE"/>
+                    <constraint firstItem="QfB-jh-EuM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="89" id="kum-uX-bk1"/>
                     <constraint firstAttribute="trailing" secondItem="HYs-dz-UMe" secondAttribute="trailing" constant="24" id="mAY-UO-wqE"/>
                     <constraint firstItem="TgX-dy-fok" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="mdb-W4-8pe"/>
-                    <constraint firstItem="g5R-Ey-DhE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="86" id="r7k-qF-Ye8"/>
-                    <constraint firstItem="gT5-QR-4om" firstAttribute="leading" secondItem="oCi-E4-kZO" secondAttribute="trailing" constant="50" id="rS8-hB-gD3"/>
+                    <constraint firstItem="ytS-fA-bKA" firstAttribute="centerY" secondItem="QfB-jh-EuM" secondAttribute="centerY" id="otR-MC-nYs"/>
                     <constraint firstItem="TgX-dy-fok" firstAttribute="leading" secondItem="LnK-sK-5Gw" secondAttribute="trailing" constant="8" id="ziG-mC-ULH"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="createdAtLabel" destination="l69-e0-F06" id="CqG-O6-VVG"/>
+                <outlet property="profileImageURL" destination="LnK-sK-5Gw" id="v69-EM-4OL"/>
+                <outlet property="tweetTextLabel" destination="HYs-dz-UMe" id="HKu-kJ-woW"/>
+                <outlet property="userNameLabel" destination="TgX-dy-fok" id="biw-RT-poa"/>
+                <outlet property="userScreenNameLabel" destination="63I-8B-JzQ" id="xQ3-MO-EEz"/>
+            </connections>
             <point key="canvasLocation" x="210" y="250"/>
         </tableViewCell>
     </objects>

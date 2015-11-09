@@ -13,6 +13,7 @@
 #import "TweetCell.h"
 
 @interface TweetsViewController ()<UITableViewDataSource, UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tweetsTableView;
 @property (strong, nonatomic) NSArray *tweets;
 
@@ -35,6 +36,7 @@
                                                     for (Tweet *t in tweets) {
                                                         NSLog(@"Text : %@", t.text);
                                                     }
+                                                    [self.tweetsTableView reloadData];
                                                 }];
     self.tweetsTableView.dataSource = self;
     self.tweetsTableView.delegate = self;
@@ -46,12 +48,13 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.tweets.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tweetsTableView dequeueReusableCellWithIdentifier:@"TweetCell"];
+    TweetCell *cell = [self.tweetsTableView dequeueReusableCellWithIdentifier:@"TweetCell"];
+    cell.tweet = self.tweets[indexPath.row];
     return cell;
 }
 
