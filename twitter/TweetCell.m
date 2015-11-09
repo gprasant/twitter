@@ -50,7 +50,16 @@
 
 - (void) setTweet:(Tweet *)tweet {
     _tweet = tweet;
-    NSURL *imageUrl = [NSURL URLWithString:_tweet.user.profileImageURL];
+    User *user = tweet.user;
+    NSURL *imageUrl = [NSURL URLWithString: user.profileImageURL];
     [self.profileImageURL setImageWithURL: imageUrl];
+    self.tweetTextLabel.text = _tweet.text;
+    self.userNameLabel.text = user.name;
+    self.userScreenNameLabel.text = user.screenName;
+    
+    self.createdAtLabel.text = [NSDateFormatter localizedStringFromDate:_tweet.createdAt
+                                                              dateStyle:NSDateFormatterShortStyle
+                                                              timeStyle:NSDateFormatterNoStyle ];
+    
 }
 @end
