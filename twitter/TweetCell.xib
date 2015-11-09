@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="110" id="KGk-i7-Jjw" customClass="TweetCell">
-            <rect key="frame" x="0.0" y="0.0" width="412" height="110"/>
+        <tableViewCell contentMode="scaleToFill" horizontalCompressionResistancePriority="751" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="122" id="KGk-i7-Jjw" customClass="TweetCell">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="122"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="412" height="109.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="412" height="121.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LnK-sK-5Gw">
@@ -22,55 +22,74 @@
                             <constraint firstAttribute="width" constant="70" id="g4f-J4-sCK"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Michael Rooney" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-dy-fok">
-                        <rect key="frame" x="86" y="13" width="98" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michael Rooney" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-dy-fok">
+                        <rect key="frame" x="86" y="13" width="98" height="14.5"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@MikeRooney" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63I-8B-JzQ">
-                        <rect key="frame" x="192" y="13" width="86" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="@MikeRooney" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63I-8B-JzQ">
+                        <rect key="frame" x="192" y="13" width="62" height="14.5"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.68414782801418439" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l69-e0-F06">
-                        <rect key="frame" x="376" y="13" width="28" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l69-e0-F06">
+                        <rect key="frame" x="385" y="13" width="19" height="13.5"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.48407025709219859" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you know you can tell if someone is a programmer simply bt saying the word &quot;timezones&quot; and seeing if they cringe?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYs-dz-UMe">
-                        <rect key="frame" x="86" y="32" width="282" height="46"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you know you can tell if someone is a programmer simply bt saying the word &quot;timezones&quot; and seeing if they cringe?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYs-dz-UMe">
+                        <rect key="frame" x="86" y="35" width="302" height="43"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reply" highlightedImage="Reply" translatesAutoresizingMaskIntoConstraints="NO" id="g5R-Ey-DhE">
-                        <rect key="frame" x="86" y="86" width="16" height="16"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reply" highlightedImage="Reply" translatesAutoresizingMaskIntoConstraints="NO" id="g5R-Ey-DhE">
+                        <rect key="frame" x="86" y="86" width="20" height="20"/>
                         <animations/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="oCi-E4-kZO">
-                        <rect key="frame" x="157" y="86" width="16" height="16"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="oCi-E4-kZO">
+                        <rect key="frame" x="157" y="86" width="20" height="20"/>
                         <animations/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="gT5-QR-4om">
-                        <rect key="frame" x="227" y="86" width="16" height="16"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="gT5-QR-4om">
+                        <rect key="frame" x="227" y="86" width="20" height="20"/>
                         <animations/>
                     </imageView>
                 </subviews>
                 <animations/>
                 <constraints>
+                    <constraint firstItem="oCi-E4-kZO" firstAttribute="leading" secondItem="g5R-Ey-DhE" secondAttribute="trailing" constant="51" id="1eh-6s-du8"/>
+                    <constraint firstItem="63I-8B-JzQ" firstAttribute="leading" secondItem="TgX-dy-fok" secondAttribute="trailing" constant="8" id="57h-fe-hbZ"/>
+                    <constraint firstAttribute="trailing" secondItem="l69-e0-F06" secondAttribute="trailing" constant="8" id="5Bx-aD-NbU"/>
                     <constraint firstItem="LnK-sK-5Gw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="7BR-HN-9ad"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oCi-E4-kZO" secondAttribute="bottom" constant="8" id="AIP-sn-Z3v"/>
+                    <constraint firstItem="gT5-QR-4om" firstAttribute="centerY" secondItem="g5R-Ey-DhE" secondAttribute="centerY" id="CTu-np-or5"/>
+                    <constraint firstItem="63I-8B-JzQ" firstAttribute="centerY" secondItem="TgX-dy-fok" secondAttribute="centerY" id="Cxo-Q7-O0A"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LnK-sK-5Gw" secondAttribute="bottom" constant="8" id="DI9-79-6Vh"/>
+                    <constraint firstItem="HYs-dz-UMe" firstAttribute="top" secondItem="63I-8B-JzQ" secondAttribute="bottom" constant="8" id="Ljb-hT-3Su"/>
+                    <constraint firstItem="l69-e0-F06" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="63I-8B-JzQ" secondAttribute="trailing" constant="8" id="SSe-h0-ilT"/>
                     <constraint firstItem="LnK-sK-5Gw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="TsT-6K-uqd"/>
+                    <constraint firstItem="g5R-Ey-DhE" firstAttribute="top" secondItem="HYs-dz-UMe" secondAttribute="bottom" constant="8" id="Ugo-2h-i7g"/>
+                    <constraint firstItem="63I-8B-JzQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="Yzg-hg-ROM"/>
+                    <constraint firstItem="oCi-E4-kZO" firstAttribute="centerY" secondItem="g5R-Ey-DhE" secondAttribute="centerY" id="Z0W-Cr-vnh"/>
+                    <constraint firstItem="HYs-dz-UMe" firstAttribute="leading" secondItem="LnK-sK-5Gw" secondAttribute="trailing" constant="8" id="aJN-1i-CtN"/>
+                    <constraint firstItem="l69-e0-F06" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="fJx-Gc-dQE"/>
+                    <constraint firstAttribute="trailing" secondItem="HYs-dz-UMe" secondAttribute="trailing" constant="24" id="mAY-UO-wqE"/>
+                    <constraint firstItem="TgX-dy-fok" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="mdb-W4-8pe"/>
+                    <constraint firstItem="g5R-Ey-DhE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="86" id="r7k-qF-Ye8"/>
+                    <constraint firstItem="gT5-QR-4om" firstAttribute="leading" secondItem="oCi-E4-kZO" secondAttribute="trailing" constant="50" id="rS8-hB-gD3"/>
+                    <constraint firstItem="TgX-dy-fok" firstAttribute="leading" secondItem="LnK-sK-5Gw" secondAttribute="trailing" constant="8" id="ziG-mC-ULH"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
-            <point key="canvasLocation" x="209" y="259"/>
+            <point key="canvasLocation" x="210" y="250"/>
         </tableViewCell>
     </objects>
     <resources>

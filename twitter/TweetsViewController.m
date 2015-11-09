@@ -14,6 +14,7 @@
 
 @interface TweetsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tweetsTableView;
+@property (strong, nonatomic) NSArray *tweets;
 
 @end
 
@@ -30,6 +31,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onComposeTap)];
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil
                                                 completion:^(NSArray *tweets, NSError *error) {
+                                                    self.tweets = tweets;
                                                     for (Tweet *t in tweets) {
                                                         NSLog(@"Text : %@", t.text);
                                                     }
@@ -38,6 +40,9 @@
     self.tweetsTableView.delegate = self;
     UINib *tweetCellNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
     [self.tweetsTableView registerNib:tweetCellNib forCellReuseIdentifier:@"TweetCell"];
+    
+    self.tweetsTableView.estimatedRowHeight = 100;
+    self.tweetsTableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
