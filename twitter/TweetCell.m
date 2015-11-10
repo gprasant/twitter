@@ -55,7 +55,7 @@
     [self.profileImageURL setImageWithURL: imageUrl];
     self.tweetTextLabel.text = _tweet.text;
     self.userNameLabel.text = user.name;
-    self.userScreenNameLabel.text = user.screenName;
+    self.userScreenNameLabel.text = [NSString stringWithFormat:@"@%@", user.screenName];
     
     self.createdAtLabel.text = [NSDateFormatter localizedStringFromDate:_tweet.createdAt
                                                               dateStyle:NSDateFormatterShortStyle
