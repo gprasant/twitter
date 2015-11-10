@@ -8,6 +8,7 @@
 
 #import "ComposeViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "TwitterClient.h"
 
 @interface ComposeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageURL;
@@ -25,6 +26,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Tweet" style:UIBarButtonItemStylePlain target:self action:@selector(onTweetTap)];
     self.tweetTextField.text = @"";
     [self.tweetTextField becomeFirstResponder];
+
     NSURL *imageURL = [NSURL URLWithString:self.user.profileImageURL];
     [self.userProfileImageURL setImageWithURL:imageURL];
 }
@@ -45,6 +47,11 @@
  */
 
 - (void) onTweetTap {
+    NSString *text = self.tweetTextField.text;
+    NSMutableDictionary *d = [NSMutableDictionary dictionaryWithObject:text forKey:@"status"];
+    [[TwitterClient sharedInstance] postStatus:d completion:^(Tweet *tweet, NSError *error) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
     NSLog(@"Post tweet");
 }
 
