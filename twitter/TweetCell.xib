@@ -76,6 +76,7 @@
                     </button>
                 </subviews>
                 <animations/>
+                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="QfB-jh-EuM" firstAttribute="top" secondItem="HYs-dz-UMe" secondAttribute="bottom" constant="11" id="53B-Nb-cv3"/>
                     <constraint firstItem="63I-8B-JzQ" firstAttribute="leading" secondItem="TgX-dy-fok" secondAttribute="trailing" constant="8" id="57h-fe-hbZ"/>

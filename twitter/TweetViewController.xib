@@ -41,7 +41,6 @@
                     <rect key="frame" x="86" y="105" width="104" height="13.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have seen the future of newspapers: http://t.co/abcde12345" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebz-80-9h0">
@@ -108,22 +107,6 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxH-fd-KIR">
-                    <rect key="frame" x="152" y="294" width="74" height="22"/>
-                    <animations/>
-                    <state key="normal" title="Button" image="Retweet"/>
-                    <connections>
-                        <action selector="onRetweetButtonTap:" destination="-1" eventType="touchUpInside" id="FT2-qN-aHA"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-bL-njk">
-                    <rect key="frame" x="273" y="295" width="74" height="22"/>
-                    <animations/>
-                    <state key="normal" title="Button" image="like"/>
-                    <connections>
-                        <action selector="onFavoriteButtonTap:" destination="-1" eventType="touchUpInside" id="pGG-Qt-An4"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eds-Yc-bxc">
                     <rect key="frame" x="22" y="297" width="17" height="17"/>
                     <animations/>
@@ -136,9 +119,25 @@
                         <action selector="onReplyButtonTap:" destination="-1" eventType="touchUpInside" id="QBJ-rk-Lor"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxH-fd-KIR">
+                    <rect key="frame" x="152" y="294" width="20" height="22"/>
+                    <animations/>
+                    <state key="normal" image="Retweet"/>
+                    <connections>
+                        <action selector="onRetweetButtonTap:" destination="-1" eventType="touchUpInside" id="FT2-qN-aHA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-bL-njk">
+                    <rect key="frame" x="283" y="295" width="20" height="22"/>
+                    <animations/>
+                    <state key="normal" image="like"/>
+                    <connections>
+                        <action selector="onFavoriteButtonTap:" destination="-1" eventType="touchUpInside" id="pGG-Qt-An4"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="qWW-ek-QyW" firstAttribute="leading" secondItem="MVN-iz-5ic" secondAttribute="trailing" constant="10.5" id="2Ot-L1-fKz"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gNO-pb-WnK" secondAttribute="trailing" constant="8" id="5iA-gf-7Wl"/>
@@ -155,7 +154,7 @@
                 <constraint firstAttribute="trailing" secondItem="wUM-Y2-J7T" secondAttribute="trailing" constant="17" id="UQk-vd-W9x"/>
                 <constraint firstItem="Ssz-kd-w3A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Vd3-oX-no6"/>
                 <constraint firstItem="Ssz-kd-w3A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="WXj-1b-end"/>
-                <constraint firstItem="OOb-bL-njk" firstAttribute="leading" secondItem="UxH-fd-KIR" secondAttribute="trailing" constant="47" id="aqA-KG-jjW"/>
+                <constraint firstItem="OOb-bL-njk" firstAttribute="leading" secondItem="UxH-fd-KIR" secondAttribute="trailing" constant="111" id="aqA-KG-jjW"/>
                 <constraint firstItem="uab-6m-NPC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="dz7-nG-IPa"/>
                 <constraint firstItem="qWW-ek-QyW" firstAttribute="centerY" secondItem="TOU-2C-OA2" secondAttribute="centerY" id="eiT-Kg-KE1"/>
                 <constraint firstItem="ebz-80-9h0" firstAttribute="top" secondItem="Ssz-kd-w3A" secondAttribute="bottom" constant="8" id="f9s-5a-riv"/>
