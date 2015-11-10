@@ -64,16 +64,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)onLogout:(id)sender {
     [User logout];
 }
@@ -96,9 +86,6 @@
     [[TwitterClient sharedInstance] homeTimelineWithParams:params
                                                 completion:^(NSArray *tweets, NSError *error) {
                                                     self.tweets = tweets;
-//                                                    for (Tweet *t in tweets) {
-//                                                        NSLog(@"Text : %@", t.text);
-//                                                    }
                                                     [self.tweetsTableView reloadData];
                                                     [self.refreshControl endRefreshing];
                                                 }];
