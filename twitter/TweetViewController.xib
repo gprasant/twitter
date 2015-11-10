@@ -7,6 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetViewController">
             <connections>
+                <outlet property="createdAtLabel" destination="VIo-Og-WqX" id="nw1-wc-Vec"/>
+                <outlet property="favoritesCountLabel" destination="qWW-ek-QyW" id="hHv-Cf-tXX"/>
+                <outlet property="retweetCountLabel" destination="TOU-2C-OA2" id="zg5-zP-zKe"/>
+                <outlet property="tweetTextLabel" destination="ebz-80-9h0" id="1U9-s7-yCu"/>
+                <outlet property="userNameLabel" destination="gNO-pb-WnK" id="qoj-ef-jwk"/>
+                <outlet property="userProfileImgURL" destination="Ssz-kd-w3A" id="9AD-gO-cD7"/>
+                <outlet property="userScreenNameLabel" destination="MTC-bA-0HY" id="z4O-Cy-EJZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -101,6 +108,22 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxH-fd-KIR">
+                    <rect key="frame" x="152" y="294" width="74" height="22"/>
+                    <animations/>
+                    <state key="normal" title="Button" image="Retweet"/>
+                    <connections>
+                        <action selector="onRetweetButtonTap:" destination="-1" eventType="touchUpInside" id="FT2-qN-aHA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-bL-njk">
+                    <rect key="frame" x="273" y="295" width="74" height="22"/>
+                    <animations/>
+                    <state key="normal" title="Button" image="like"/>
+                    <connections>
+                        <action selector="onFavoriteButtonTap:" destination="-1" eventType="touchUpInside" id="pGG-Qt-An4"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eds-Yc-bxc">
                     <rect key="frame" x="22" y="297" width="17" height="17"/>
                     <animations/>
@@ -109,16 +132,9 @@
                         <constraint firstAttribute="width" constant="17" id="Flw-An-hfi"/>
                     </constraints>
                     <state key="normal" title="Button" image="Reply"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxH-fd-KIR">
-                    <rect key="frame" x="152" y="294" width="74" height="22"/>
-                    <animations/>
-                    <state key="normal" title="Button" image="Retweet"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-bL-njk">
-                    <rect key="frame" x="273" y="295" width="74" height="22"/>
-                    <animations/>
-                    <state key="normal" title="Button" image="like"/>
+                    <connections>
+                        <action selector="onReplyButtonTap:" destination="-1" eventType="touchUpInside" id="QBJ-rk-Lor"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>

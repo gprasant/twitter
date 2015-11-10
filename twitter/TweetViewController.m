@@ -9,6 +9,17 @@
 #import "TweetViewController.h"
 
 @interface TweetViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *userProfileImgURL;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userScreenNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tweetTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
+@property (weak, nonatomic) IBOutlet UILabel *retweetCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *favoritesCountLabel;
+
+- (IBAction)onReplyButtonTap:(id)sender;
+- (IBAction)onRetweetButtonTap:(id)sender;
+- (IBAction)onFavoriteButtonTap:(id)sender;
 
 @end
 
@@ -34,4 +45,12 @@
 }
 */
 
+- (IBAction)onReplyButtonTap:(id)sender {
+}
+
+- (IBAction)onRetweetButtonTap:(id)sender {
+}
+
+- (IBAction)onFavoriteButtonTap:(id)sender {
+}
 @end
