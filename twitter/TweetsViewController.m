@@ -11,15 +11,18 @@
 #import "TwitterClient.h"
 #import "Tweet.h"
 #import "TweetCell.h"
+#import "ComposeViewController.h"
 
 @interface TweetsViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tweetsTableView;
 @property (strong, nonatomic) NSArray *tweets;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
 @implementation TweetsViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,16 +33,12 @@
                                                                            action:@selector(onSignoutTap)];
     self.navigationItem.title = @"Home";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onComposeTap)];
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   [NSNumber numberWithInt:50], @"count", nil];
-    [[TwitterClient sharedInstance] homeTimelineWithParams:params
-                                                completion:^(NSArray *tweets, NSError *error) {
-                                                    self.tweets = tweets;
-                                                    for (Tweet *t in tweets) {
-                                                        NSLog(@"Text : %@", t.text);
-                                                    }
-                                                    [self.tweetsTableView reloadData];
-                                                }];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshTweets) forControlEvents:UIControlEventValueChanged];
+    [self.tweetsTableView insertSubview:self.refreshControl atIndex:0];
+    
+    [self refreshTweets];
+    
     self.tweetsTableView.dataSource = self;
     self.tweetsTableView.delegate = self;
     UINib *tweetCellNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
@@ -86,6 +85,23 @@
 
 - (void) onComposeTap {
     //Launch Compose view here;
+    ComposeViewController *vc = [[ComposeViewController alloc] initWithNibName:@"ComposeViewController" bundle:nil];
+    vc.user = [User currentUser];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void) refreshTweets {
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   [NSNumber numberWithInt:50], @"count", nil];
+    [[TwitterClient sharedInstance] homeTimelineWithParams:params
+                                                completion:^(NSArray *tweets, NSError *error) {
+                                                    self.tweets = tweets;
+//                                                    for (Tweet *t in tweets) {
+//                                                        NSLog(@"Text : %@", t.text);
+//                                                    }
+                                                    [self.tweetsTableView reloadData];
+                                                    [self.refreshControl endRefreshing];
+                                                }];
 }
 
 @end
