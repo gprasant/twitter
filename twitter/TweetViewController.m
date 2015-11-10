@@ -7,6 +7,7 @@
 //
 
 #import "TweetViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface TweetViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImgURL;
@@ -28,6 +29,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.userNameLabel.text = _tweet.user.name;
+    User *user = _tweet.user;
+    self.userNameLabel.text = user.name;
+    self.userScreenNameLabel.text = user.screenName;
+    [self.userProfileImgURL setImageWithURL:[NSURL URLWithString:user.profileImageURL]];
+    self.tweetTextLabel.text = _tweet.text;
+    self.retweetCountLabel.text = _tweet.retweetCount;
+    self.favoritesCountLabel.text = _tweet.favoriteCount;
+    
+    self.createdAtLabel.text = [NSDateFormatter localizedStringFromDate:_tweet.createdAt
+                                                              dateStyle:NSDateFormatterShortStyle
+                                                              timeStyle:NSDateFormatterShortStyle ];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,15 +49,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) setTweet:(Tweet *) tweet {
+    _tweet = tweet;
 }
-*/
 
 - (IBAction)onReplyButtonTap:(id)sender {
 }

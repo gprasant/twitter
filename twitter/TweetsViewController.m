@@ -7,6 +7,7 @@
 //
 
 #import "TweetsViewController.h"
+#import "TweetViewController.h"
 #import "User.h"
 #import "TwitterClient.h"
 #import "Tweet.h"
@@ -57,6 +58,13 @@
     TweetCell *cell = [self.tweetsTableView dequeueReusableCellWithIdentifier:@"TweetCell"];
     cell.tweet = self.tweets[indexPath.row];
     return cell;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tweetsTableView deselectRowAtIndexPath:indexPath animated:YES];
+    TweetViewController *vc = [[TweetViewController alloc] initWithNibName:@"TweetViewController" bundle:nil];
+    vc.tweet = self.tweets[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
