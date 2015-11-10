@@ -18,6 +18,8 @@
 		12845B271BEFB64100D2DF9C /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12845B251BEFB64100D2DF9C /* TweetCell.xib */; };
 		12AFDD801BF1C5D300D90117 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AFDD7E1BF1C5D300D90117 /* ComposeViewController.m */; };
 		12AFDD811BF1C5D300D90117 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12AFDD7F1BF1C5D300D90117 /* ComposeViewController.xib */; };
+		12AFDD851BF1E1C100D90117 /* TweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AFDD831BF1E1C100D90117 /* TweetViewController.m */; };
+		12AFDD861BF1E1C100D90117 /* TweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12AFDD841BF1E1C100D90117 /* TweetViewController.xib */; };
 		12E1EBAB1BED08FC00146263 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E1EBAA1BED08FC00146263 /* User.m */; };
 		12E1EBAE1BED090700146263 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E1EBAD1BED090700146263 /* Tweet.m */; };
 		12E1EBB31BEE796100146263 /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E1EBB11BEE796100146263 /* TweetsViewController.m */; };
@@ -45,6 +47,9 @@
 		12AFDD7D1BF1C5D300D90117 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		12AFDD7E1BF1C5D300D90117 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		12AFDD7F1BF1C5D300D90117 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		12AFDD821BF1E1C100D90117 /* TweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetViewController.h; sourceTree = "<group>"; };
+		12AFDD831BF1E1C100D90117 /* TweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetViewController.m; sourceTree = "<group>"; };
+		12AFDD841BF1E1C100D90117 /* TweetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetViewController.xib; sourceTree = "<group>"; };
 		12E1EBA91BED08FC00146263 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		12E1EBAA1BED08FC00146263 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		12E1EBAC1BED090700146263 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
@@ -153,6 +158,9 @@
 				12AFDD7D1BF1C5D300D90117 /* ComposeViewController.h */,
 				12AFDD7E1BF1C5D300D90117 /* ComposeViewController.m */,
 				12AFDD7F1BF1C5D300D90117 /* ComposeViewController.xib */,
+				12AFDD821BF1E1C100D90117 /* TweetViewController.h */,
+				12AFDD831BF1E1C100D90117 /* TweetViewController.m */,
+				12AFDD841BF1E1C100D90117 /* TweetViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12E1EBB41BEE796100146263 /* TweetsViewController.xib in Resources */,
+				12AFDD861BF1E1C100D90117 /* TweetViewController.xib in Resources */,
 				12AFDD811BF1C5D300D90117 /* ComposeViewController.xib in Resources */,
 				12845B271BEFB64100D2DF9C /* TweetCell.xib in Resources */,
 				121D7A3C1BEAFFA100662E05 /* LaunchScreen.storyboard in Resources */,
@@ -303,6 +312,7 @@
 				121D7A4A1BEB062B00662E05 /* TwitterClient.m in Sources */,
 				121D7A311BEAFFA100662E05 /* AppDelegate.m in Sources */,
 				12AFDD801BF1C5D300D90117 /* ComposeViewController.m in Sources */,
+				12AFDD851BF1E1C100D90117 /* TweetViewController.m in Sources */,
 				12E1EBAE1BED090700146263 /* Tweet.m in Sources */,
 				121D7A2E1BEAFFA100662E05 /* main.m in Sources */,
 				121D7A461BEB011A00662E05 /* LoginViewController.m in Sources */,
