@@ -8,7 +8,19 @@
 
 #import "ProfileViewController.h"
 
+
 @interface ProfileViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *userBannerImage;
+@property (weak, nonatomic) IBOutlet UIImageView *userProfileImage;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *screenNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followingCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followersCountLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tweetsTable;
+
 
 @end
 
@@ -17,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self setupUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +46,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) setupUI {
+    self.nameLabel.text = self.user.name;
+    self.screenNameLabel.text = self.user.screenName;
+}
 
 @end

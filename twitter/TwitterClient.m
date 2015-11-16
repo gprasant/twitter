@@ -93,6 +93,15 @@ NSString * const kTwitterBaseUrl  =       @"https://api.twitter.com";
                                 }];
 }
 
+- (void) userProfileWithParams: (NSDictionary *)params completion: (void (^)(User *user, NSError *error)) completion {
+    [self GET:@"1.1/users/show.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        User *user = [[User alloc] initWithDictionary:responseObject];
+        completion(user, nil);
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        completion(nil, error);
+    }];
+}
+
 - (void) postStatus: (NSDictionary *)params completion: (void (^)(Tweet *tweet, NSError *error)) completion {
     
     [self POST:@"1.1/statuses/update.json"

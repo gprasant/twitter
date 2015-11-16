@@ -70,7 +70,9 @@ CGFloat originalLeftMargin;
 }
 
 - (void) hideMenuView {
-    self.leftMarginConstraint.constant = 0;
+    [UIView animateWithDuration:2 animations:^{
+        self.leftMarginConstraint.constant = 0;
+    }];
 }
 
 #pragma mark - Private methods

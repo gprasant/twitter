@@ -11,6 +11,7 @@
 #import "TweetsViewController.h"
 #import "HamburgerViewController.h"
 #import "MenuViewController.h"
+#import "ProfileViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 #import "Tweet.h"
@@ -72,7 +73,10 @@
         UIViewController *tvc = [[TweetsViewController alloc] init];
         UIViewController *hvc = [[HamburgerViewController alloc] init];
         UIViewController *mvc = [[MenuViewController alloc] init];
+        UIViewController *pvc = [[ProfileViewController alloc] init];
+
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:hvc];
+        
         self.window.rootViewController = nvc;
     } else {
         NSLog(@"User not logged in");

@@ -11,6 +11,7 @@
 #import "ProfileViewController.h"
 #import "MentionsViewController.h"
 #import "MenuCell.h"
+#import "User.h"
 
 @interface MenuViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -64,9 +65,11 @@
 
 -(void) initMenuItems {
     self.menuItems = [NSMutableArray arrayWithArray:@[@"Home", @"Profile", @"Mentions"]];
+    ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
+    profileViewController.user = [User currentUser];
     self.contentControllers = [NSMutableArray arrayWithArray:@[
                                                                [[TweetsViewController alloc] init],
-                                                               [[ProfileViewController alloc] init],
+                                                               profileViewController,
                                                                [[MentionsViewController alloc] init]
                                                             ]];
     [self.tableView reloadData];
