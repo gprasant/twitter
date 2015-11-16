@@ -8,10 +8,12 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "TweetsViewController.h"
+#import "HamburgerViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 #import "Tweet.h"
-#import "TweetsViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -25,18 +27,7 @@
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogOut) name:UserDidLogoutNotification object:nil];
-    
-    User *currentUser = [User currentUser];
-    if (currentUser != nil) {
-        NSLog(@"Welcome to %@", currentUser.name);
-        UIViewController *vc = [[TweetsViewController alloc] init];
-        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
-        self.window.rootViewController = nvc;
-    } else {
-        NSLog(@"User not logged in");
-        self.window.rootViewController = [[LoginViewController alloc] init];
-    }
-    [self.window makeKeyAndVisible];
+    [self launchStartingView];
     return YES;
 }
 
@@ -69,6 +60,22 @@
 
 - (void) userDidLogOut {
      self.window.rootViewController = [[LoginViewController alloc] init];
+    [self.window makeKeyAndVisible];
+}
+
+
+- (void) launchStartingView {
+    User *currentUser = [User currentUser];
+    if (currentUser != nil) {
+        NSLog(@"Welcome to %@", currentUser.name);
+        UIViewController *tvc = [[TweetsViewController alloc] init];
+        UIViewController *hvc = [[HamburgerViewController alloc] init];
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:hvc];
+        self.window.rootViewController = nvc;
+    } else {
+        NSLog(@"User not logged in");
+        self.window.rootViewController = [[LoginViewController alloc] init];
+    }
     [self.window makeKeyAndVisible];
 }
 

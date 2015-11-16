@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1218A98D1BF97F4A00DCB761 /* HamburgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218A98B1BF97F4A00DCB761 /* HamburgerViewController.m */; };
+		1218A98E1BF97F4A00DCB761 /* HamburgerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1218A98C1BF97F4A00DCB761 /* HamburgerViewController.xib */; };
 		121D7A2E1BEAFFA100662E05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D7A2D1BEAFFA100662E05 /* main.m */; };
 		121D7A311BEAFFA100662E05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D7A301BEAFFA100662E05 /* AppDelegate.m */; };
 		121D7A391BEAFFA100662E05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 121D7A381BEAFFA100662E05 /* Assets.xcassets */; };
@@ -29,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		0FE51F0AC04FAD0BA5BA5A70 /* libPods-twitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1218A98A1BF97F4A00DCB761 /* HamburgerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamburgerViewController.h; sourceTree = "<group>"; };
+		1218A98B1BF97F4A00DCB761 /* HamburgerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamburgerViewController.m; sourceTree = "<group>"; };
+		1218A98C1BF97F4A00DCB761 /* HamburgerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HamburgerViewController.xib; sourceTree = "<group>"; };
 		121D7A291BEAFFA100662E05 /* twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		121D7A2D1BEAFFA100662E05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		121D7A2F1BEAFFA100662E05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -161,6 +166,9 @@
 				12AFDD7D1BF1C5D300D90117 /* ComposeViewController.h */,
 				12AFDD7E1BF1C5D300D90117 /* ComposeViewController.m */,
 				12AFDD7F1BF1C5D300D90117 /* ComposeViewController.xib */,
+				1218A98A1BF97F4A00DCB761 /* HamburgerViewController.h */,
+				1218A98B1BF97F4A00DCB761 /* HamburgerViewController.m */,
+				1218A98C1BF97F4A00DCB761 /* HamburgerViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1218A98E1BF97F4A00DCB761 /* HamburgerViewController.xib in Resources */,
 				12E1EBB41BEE796100146263 /* TweetsViewController.xib in Resources */,
 				12CCF4491BF1EEBA00EDC5C6 /* TweetViewController.xib in Resources */,
 				12AFDD811BF1C5D300D90117 /* ComposeViewController.xib in Resources */,
@@ -318,6 +327,7 @@
 				121D7A461BEB011A00662E05 /* LoginViewController.m in Sources */,
 				12E1EBB31BEE796100146263 /* TweetsViewController.m in Sources */,
 				12845B261BEFB64100D2DF9C /* TweetCell.m in Sources */,
+				1218A98D1BF97F4A00DCB761 /* HamburgerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
