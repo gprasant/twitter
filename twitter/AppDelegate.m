@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "TweetsViewController.h"
 #import "HamburgerViewController.h"
+#import "MenuViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 #import "Tweet.h"
@@ -70,6 +71,7 @@
         NSLog(@"Welcome to %@", currentUser.name);
         UIViewController *tvc = [[TweetsViewController alloc] init];
         UIViewController *hvc = [[HamburgerViewController alloc] init];
+        UIViewController *mvc = [[MenuViewController alloc] init];
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:hvc];
         self.window.rootViewController = nvc;
     } else {

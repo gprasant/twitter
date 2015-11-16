@@ -10,4 +10,7 @@
 
 @interface HamburgerViewController : UIViewController
 
+-(void) displayContentController:(UIViewController *)content;
+-(void) hideCurrentContentController;
+- (void) hideMenuView;
 @end

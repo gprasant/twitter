@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HamburgerViewController">
             <connections>
+                <outlet property="contentView" destination="JCN-rD-4GB" id="CgT-Uh-75Y"/>
                 <outlet property="leftMarginConstraint" destination="RrI-2d-bIM" id="JsP-PU-SQL"/>
+                <outlet property="menuView" destination="HKL-ra-0f4" id="ljO-Lh-Ilv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

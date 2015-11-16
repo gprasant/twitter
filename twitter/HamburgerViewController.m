@@ -7,9 +7,18 @@
 //
 
 #import "HamburgerViewController.h"
+#import "MenuViewController.h"
+#import "TweetsViewController.h"
 
 @interface HamburgerViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftMarginConstraint;
+@property (weak, nonatomic) IBOutlet UIView *menuView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+
+@property (strong, nonatomic) MenuViewController *menuController;
+@property (strong, nonatomic) UIViewController *contentController;
+
+
 
 @end
 
@@ -20,6 +29,8 @@ CGFloat originalLeftMargin;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self setupMenuController];
+    [self setupContentController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +69,9 @@ CGFloat originalLeftMargin;
     }
 }
 
+- (void) hideMenuView {
+    self.leftMarginConstraint.constant = 0;
+}
 
 #pragma mark - Private methods
 
@@ -65,8 +79,36 @@ CGFloat originalLeftMargin;
     self.leftMarginConstraint.constant = self.view.frame.size.width - 50;
 }
 
-- (void) hideMenuView {
-    self.leftMarginConstraint.constant = 0;
+-(void) setupMenuController {
+    self.menuController = [[MenuViewController alloc] init];
 }
 
+- (void) setupContentController {
+    UIViewController *tweetsVC = [[TweetsViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tweetsVC];
+    [self hideCurrentContentController];
+    [self displayContentController:nvc];
+}
+
+-(void) setMenuController:(MenuViewController *)vc {
+    _menuController = vc;
+    _menuController.hamburgerController = self;
+    [self.menuView addSubview: vc.view];
+}
+
+-(void) displayContentController:(UIViewController *)content {
+    [self addChildViewController:content];
+    content.view.frame = self.view.frame;
+    
+    [self.contentView addSubview: content.view];
+    [content didMoveToParentViewController:self];
+    self.contentController = content;
+}
+
+-(void) hideCurrentContentController {
+    UIViewController *content = self.contentController;
+    [content willMoveToParentViewController: nil];
+    [content.view removeFromSuperview];
+    [content removeFromParentViewController];
+}
 @end
