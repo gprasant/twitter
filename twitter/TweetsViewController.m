@@ -15,9 +15,10 @@
 #import "ComposeViewController.h"
 
 @interface TweetsViewController ()<UITableViewDataSource, UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *tweetsTableView;
+// Data
 @property (strong, nonatomic) NSArray *tweets;
+// UI
+@property (weak, nonatomic) IBOutlet UITableView *tweetsTableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
@@ -27,27 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
-                                                                                          target:self
-                                                                                          action:@selector(onSignoutTap)];
-    self.navigationItem.title = @"Home";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
-                                                                                           target:self
-                                                                                           action:@selector(onComposeTap)];
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(refreshTweets) forControlEvents:UIControlEventValueChanged];
-    [self.tweetsTableView insertSubview:self.refreshControl atIndex:0];
+    [self setupNavigationBar];
+    [self setupRefreshControl];
     
     [self refreshTweets];
     
-    self.tweetsTableView.dataSource = self;
-    self.tweetsTableView.delegate = self;
-    UINib *tweetCellNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
-    [self.tweetsTableView registerNib:tweetCellNib forCellReuseIdentifier:@"TweetCell"];
-    
-    self.tweetsTableView.estimatedRowHeight = 100;
-    self.tweetsTableView.rowHeight = UITableViewAutomaticDimension;
+    [self setupTableView];
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -98,6 +84,33 @@
                                                     [self.tweetsTableView reloadData];
                                                     [self.refreshControl endRefreshing];
                                                 }];
+}
+
+-(void) setupNavigationBar {
+    // Do any additional setup after loading the view from its nib.
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+                                                                                          target:self
+                                                                                          action:@selector(onSignoutTap)];
+    self.navigationItem.title = @"Home";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
+                                                                                           target:self
+                                                                                           action:@selector(onComposeTap)];
+}
+
+- (void) setupRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshTweets) forControlEvents:UIControlEventValueChanged];
+    [self.tweetsTableView insertSubview:self.refreshControl atIndex:0];
+}
+
+- (void) setupTableView {
+    self.tweetsTableView.dataSource = self;
+    self.tweetsTableView.delegate = self;
+    UINib *tweetCellNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
+    [self.tweetsTableView registerNib:tweetCellNib forCellReuseIdentifier:@"TweetCell"];
+    
+    self.tweetsTableView.estimatedRowHeight = 100;
+    self.tweetsTableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 @end
