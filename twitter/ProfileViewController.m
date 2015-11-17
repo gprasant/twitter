@@ -50,6 +50,10 @@
 - (void) setupUI {
     self.nameLabel.text = self.user.name;
     self.screenNameLabel.text = self.user.screenName;
+    self.descriptionLabel.text = self.user.tagline;
+    self.followersCountLabel.text = self.user.followersCount;
+    self.followingCountLabel.text = self.user.followingCount;
+    self.locationLabel.text = self.user.location;
 }
 
 @end

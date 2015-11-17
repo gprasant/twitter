@@ -71,10 +71,12 @@
     if (currentUser != nil) {
         NSLog(@"Welcome to %@", currentUser.name);
         UIViewController *tvc = [[TweetsViewController alloc] init];
-        UIViewController *hvc = [[HamburgerViewController alloc] init];
+
         UIViewController *mvc = [[MenuViewController alloc] init];
         UIViewController *pvc = [[ProfileViewController alloc] init];
-
+        
+        UIViewController *hvc = [[HamburgerViewController alloc] init];
+        
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:hvc];
         
         self.window.rootViewController = nvc;

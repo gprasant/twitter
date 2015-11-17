@@ -31,6 +31,10 @@ NSString * const kCurrentUserKey = @"currentUserKey";
         self.screenName = dictionary[@"screen_name"];
         self.profileImageURL = dictionary[@"profile_image_url"];
         self.tagline = dictionary[@"description"];
+
+        self.followersCount = dictionary[@"followers_count"];
+        self.followingCount = dictionary[@"friends_count"];
+        self.profileBannerURL = dictionary[@"profile_banner_url"];
     }
     return self;
 }
