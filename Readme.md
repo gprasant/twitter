@@ -16,7 +16,7 @@ The following **required** functionality is completed:
    - [x] Contains the user header view
    - [x] Contains a section with the users basic stats: # tweets, # following, # followers
 - [x] Home Timeline
-   - [ ] Tapping on a user image should bring up that user's profile page
+   - [ ] Tapping on a user image should bring up that user's profile page (Added notifications, Dont know how to add some context data with the notification)
 
 The following **optional** features are implemented:
 
@@ -33,7 +33,7 @@ The following **optional** features are implemented:
 
 
 
-
+Video Walkthrough: [Video walkthrough](twitter_v3.gif)
 
 
 
